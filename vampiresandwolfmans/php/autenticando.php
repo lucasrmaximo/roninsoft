@@ -12,11 +12,15 @@ $sql = "SELECT * FROM `conta` WHERE `usuario` = '$usuario' AND `senha` = '$senha
 
 $linhasconsulta = mysqli_query($conexao,$sql);
 
+$rows = mysqli_num_rows($linhasconsulta);
+
+echo " linhas $rows";
+
 if (!$linhasconsulta) {
    die("erro".mysqli_connect_error());
 }
 
-if($linhasconsulta > 0) {
+if($rows > 0) {
 
       //  $_SESSION['usuario']=$_POST['edt_usuario'];
       //  $_SESSION['senha']=$_POST['edt_senha'];
